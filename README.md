@@ -23,44 +23,56 @@ You must also implement a search function where the results must arrive already 
 
 Sequelize Model Definitions:
 
- Product:
-id: Type: UUID  
-name: Type: String
-price: Type: Float
-url_image: Type: String
-discount: Type: Integer
-category: Type: Integer
+    Product:
+        id: Type: UUID  
+        name: Type: String
+        price: Type: Float
+        url_image: Type: String
+        discount: Type: Integer
+        category: Type: Integer
 
-Category:
-id: Type: Integer
-name: Type: String
+    Category:
+        id: Type: Integer
+        name: Type: String
+
 Routes:
- Base URL: https://bsale-miniati.herokuapp.com
+ Base URL: 
+        
+    https://bsale-miniati.herokuapp.com
 
 Product routes: “/product”
-GET all products:
+ 
+GET all products: 
 GET /product/
 Returns an array of  Product type objects
-Example: https://bsale-miniati.herokuapp.com/product/
+Example: 
+
+    https://bsale-miniati.herokuapp.com/product/
 
 
 GET matching products
 GET /product/search?name={name}
 Receives a name through query
 Returns an array of Product type objects whose property “name” matches the input. 
-Example: https://bsale-miniati.herokuapp.com/product/search?name=pisco
+Example: 
+
+    https://bsale-miniati.herokuapp.com/product/search?name=pisco
 
 POST filter by category
 POST /product/filter 
 Receives a json type object through body, with the id of the desired categories
  {“categories”: {desired categories}} 
 Returns an array of Product type objects whose property “category” matches the desired category
-Example: https://bsale-miniati.herokuapp.com/product/filter, 
-{“categories”: 2}
+Example: 
+        
+    https://bsale-miniati.herokuapp.com/product/filter, 
+    {“categories”: 2}
 
 Category routes: “/category”
 GET all categories:
 GET /category/
 Returns an array of Category type objects
-Example: https://bsale-miniati.herokuapp.com/category/
+Example: 
+
+    https://bsale-miniati.herokuapp.com/category/
 
