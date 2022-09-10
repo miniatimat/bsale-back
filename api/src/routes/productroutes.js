@@ -16,8 +16,8 @@ router.get("/", async (req, res)=>{
   }
 })
 //Get all products that match a category, which is received via parameters.
-router.post("/filter", async (req, res)=>{
-  const {categories} = req.body
+router.get("/filter", async (req, res)=>{
+  const {categories} = req.query
   try {
     const products = await Product.findAll({
       where: {
@@ -33,7 +33,6 @@ router.post("/filter", async (req, res)=>{
 
 router.get("/search", async (req, res)=>{
   const {name} = req.query
-  console.log(name)
   try{
     const matchingProducts = await Product.findAll(
         {where:{
