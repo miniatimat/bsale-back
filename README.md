@@ -58,14 +58,13 @@ Example:
 
     https://bsale-miniati.herokuapp.com/product/search?name=pisco
 
-POST filter by category
-POST /product/filter 
-Receives a json type object through body, with the id of the desired categories
- {“categories”: {desired categories}} 
+GET filter by category
+GET /product/filter?category={category}
+Receives a number through query.
 Returns an array of Product type objects whose property “category” matches the desired category
 Example: 
         
-    https://bsale-miniati.herokuapp.com/product/filter, 
+    https://bsale-miniati.herokuapp.com/product/filter?category=snack, 
     {“categories”: 2}
 
 Category routes: “/category”
